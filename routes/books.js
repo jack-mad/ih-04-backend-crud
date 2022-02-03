@@ -7,5 +7,7 @@ const bookController = require('../controllers/bookController')
 router.get('/', bookController.getBooks)
 
 
+router.get('/create',bookController.createBooks)
+
 //Exportaciones
 module.exports = router
