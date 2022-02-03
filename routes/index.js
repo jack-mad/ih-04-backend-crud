@@ -2,9 +2,10 @@
 const express = require('express')
 const router = express.Router()
 
+const controller =require('./../controllers/controller')
 // Ruteo
-router.get('/', (req, res) => {
-    res.send("hola")
-})
+router.get('/', controller.getHome)
+
+
 //Exportaciones
 module.exports = router
