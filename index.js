@@ -3,15 +3,24 @@
 // 1. IMPORTACIONES
 const express			= require("express")
 const app				= express()
-
+const hbs = require("hbs")
 const connectDB			= require("./config/db")
+
+
+
 
 // 2. MIDDLEWARES
 require("dotenv").config()
 
 connectDB()
+
+app.use(express.static('public'))
+app.set('view engine', 'hbs')
+app.set('views',__dirname+'/views')
+
 // 3. RUTEO
 app.use("/", require("./routes/index"))
+app.use("/books",require("./routes/books"))
 
 
 // 4. SERVIDOR
