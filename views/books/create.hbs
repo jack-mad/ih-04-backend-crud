@@ -1,23 +1,37 @@
-<h1>Crea libro</h1>
+<!-- This example requires Tailwind CSS v2.0+ -->
+<h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl mt-10 mb-3">Crear libro</h1>
+<a href="/books/" class="text-3xl font-bold tracking-tight sm:text-xl mt-5 mb-10 text-indigo-800">Regresar a libros</a>
 
-{{!-- el actuin apunta al metodo post del ruteo --}}
-<form action="/books/create" method="post">
 
-  <label> Title:
-    <input type="text" name="title" />
-  </label>
-
-  <label> Author:
-    <input type="text" name="author" />
-  </label>
-
-  <label> Description:
-    <textarea name="description" cols="30" rows="4"> </textarea>
-  </label>
-
-  <label> Rate:
-    <input type="number" name="rating" min="1" max="10" />
-  </label>
-
-  <button type="submit"> Create </button>
-</form>
+<div class="bg-white shadow overflow-hidden sm:rounded-lg">
+  <div class="px-4 py-5 sm:px-6 bg-indigo-500">
+    <h3 class="text-xl leading-6 font-bold text-gray-50">Especifique los detalles a continuación</h3>
+    
+  </div>
+  <form action="/books/create" method="POST">
+  <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+    <dl class="sm:divide-y sm:divide-gray-200">
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Titulo</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><input type="text" name="title" placeholder="Clic aqui para agregar" /></dd>
+      </div>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Nombre del autor</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><input type="text" name="author" placeholder="Clic aqui para agregar" /></dd>
+      </div>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Descripción</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><textarea rows="6" cols="100" name="description" placeholder="Clic aqui para agregar"></textarea></dd>
+      </div>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Rating</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><input type="number" name="rating" placeholder="Clic aqui para agregar" />/10 puntos</dd>
+      </div>
+       <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt><button type="submit" class="text-md font-bold text-indigo-800 ">Crear libro</button></dt>
+      </div>
+     
+    </dl>
+  </div>
+    </form>
+</div>

@@ -1,10 +1,28 @@
-<h1>{{book.title}}</h1>
 
-<p>Escrito por {{book.author}}</p>
+<!-- This example requires Tailwind CSS v2.0+ -->
+<h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl mt-10 mb-3">Detalles</h1>
+<a href="/books/" class="text-3xl font-bold tracking-tight sm:text-xl mt-5 mb-10 text-indigo-800">Regresar a libros</a>
 
-<p>{{book.description}}</p>
 
-<p>Rating: {{book.rating}}</p>
-<hr>
-
-<a href="/books">Regresar a libros</a>
+<div class="bg-white shadow overflow-hidden sm:rounded-lg">
+  <div class="px-4 py-5 sm:px-6 bg-gray-700">
+    <h3 class="text-xl leading-6 font-bold text-gray-50">{{book.title}}</h3>
+    
+  </div>
+  <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+    <dl class="sm:divide-y sm:divide-gray-200">
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Nombre del autor</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{book.author}}</dd>
+      </div>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Descripción</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{book.description}}</dd>
+      </div>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Rating</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{{book.rating}}/10 puntos</dd>
+      </div>
+    </dl>
+  </div>
+</div>

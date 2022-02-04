@@ -1,17 +1,39 @@
-<h1>Editar Libro - {{book.title}}</h1>
 
-<form action="/books/{{book._id}}/edit" method="POST">
-    <label for="">Titulo</label>
-    <input type="text" name="title" value="{{book.title}}" />
 
-     <label for="">Author</label>
-    <input type="text" name="author" value="{{book.author}}" />
+<!-- This example requires Tailwind CSS v2.0+ -->
+<h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl mt-10 mb-3">Editar</h1>
+<a href="/books/" class="text-3xl font-bold tracking-tight sm:text-xl mt-5 mb-10 text-indigo-800">Regresar a libros</a>
 
-     <label for="">Description</label>
-    <input type="text" name="description" value="{{book.description}}" />
 
-     <label for="">Rating</label>
-    <input type="number" name="rating" value="{{book.rating}}" />
-
-    <button type="submit">Guardar cambios</button>
-</form>
+<div class="bg-white shadow overflow-hidden sm:rounded-lg">
+  <div class="px-4 py-5 sm:px-6 bg-indigo-500">
+    <h3 class="text-xl leading-6 font-bold text-gray-50">Editar Libro - {{book.title}}</h3>
+    
+  </div>
+  <form action="/books/{{book._id}}/edit" method="POST">
+  <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+    <dl class="sm:divide-y sm:divide-gray-200">
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Titulo</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><input type="text" name="title" value="{{book.title}}" /></dd>
+      </div>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Nombre del autor</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><input type="text" name="author" value="{{book.author}}" /></dd>
+      </div>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Descripción</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><textarea rows="6" cols="100" name="description" >{{book.description}}</textarea></dd>
+      </div>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Rating</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2"><input type="number" name="rating" value="{{book.rating}}" />/10 puntos</dd>
+      </div>
+       <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt><button type="submit" class="text-md font-bold text-indigo-800 ">Guardar cambios</button></dt>
+      </div>
+     
+    </dl>
+  </div>
+    </form>
+</div>
